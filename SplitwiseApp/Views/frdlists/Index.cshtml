@@ -1,0 +1,48 @@
+﻿@model IEnumerable<SplitwiseApp.Models.frdlist>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <h2><b>My Net balance :</b>  @ViewBag.total</h2>
+
+    <h2>Friend List</h2>
+<br>
+    <p>
+        @Html.ActionLink("Add Friend", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            
+            <th>
+                @Html.DisplayNameFor(model => model.friendname)
+            </th>
+         
+            <th>
+                @Html.DisplayNameFor(model => model.rupee)
+            </th>
+            <th></th>
+        </tr>
+        @foreach (var item in ViewBag.frds as List<SplitwiseApp.Models.frdlist>)
+        {
+
+            <tr>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.friendname)
+                </td>
+               
+                <td>
+                    @Html.DisplayFor(modelItem => item.rupee)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.ID })|
+                    @Html.ActionLink("Add Expence", "Add", new { email = item.Email },new { @class = "btn btn-primary" })
+                    @Html.ActionLink("History", "History", new { email = item.Email },new { @class = "btn btn-primary" }) 
+
+                </td>
+            </tr>
+        }
+
+    </table>

@@ -1,0 +1,52 @@
+﻿@model SplitwiseApp.Models.frdlist
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+  
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.loginuser)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.loginuser)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.friendname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.friendname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.rupee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.rupee)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
